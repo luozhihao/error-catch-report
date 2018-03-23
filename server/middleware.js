@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs');
 const router = express.Router();
 const fetch = require('node-fetch');
-const querystring = require('querystring');
 const sourceMap = require('source-map');
 
 const path = require('path');
@@ -30,7 +29,7 @@ router.post('/errorMsg/', function(req, res) {
 				column: error.columnNo // 压缩后的列号
 			});
 
-			console.log(ret)
+			console.log(ret);
 
 			// 将异常上报至后台
 			/*fetch(url, {
